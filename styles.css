@@ -1,0 +1,368 @@
+/* Sidebar CSS */
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40; /* Màu nền của sidebar */
+    padding: 15px; /* Giảm khoảng cách padding để thanh sidebar nhỏ gọn hơn */
+    overflow-y: auto; /* Thêm thanh cuộn dọc nếu nội dung vượt quá chiều cao màn hình */
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0; /* Loại bỏ khoảng cách trên dưới */
+}
+
+.sidebar ul li {
+    margin-bottom: 15px; /* Giảm khoảng cách giữa các mục */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem; /* Giảm kích thước chữ một chút */
+    padding: 10px; /* Tăng khoảng cách giữa văn bản và đường viền */
+    display: block; /* Đảm bảo vùng clickable lớn */
+    border-radius: 5px; /* Tạo cảm giác mềm mại với bo góc */
+}
+
+.sidebar ul li a:hover {
+    background-color: #495057; /* Thêm hiệu ứng hover để cải thiện trải nghiệm người dùng */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 200px; /* Đẩy nội dung chính sang phải tương ứng với chiều rộng của sidebar */
+    /* padding: 20px; */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px; /* Giảm chiều rộng sidebar trên màn hình nhỏ */
+    }
+
+    .main-content {
+        margin-left: 200px; /* Điều chỉnh nội dung chính tương ứng với chiều rộng sidebar */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%; /* Sidebar chiếm toàn bộ chiều rộng màn hình trên điện thoại */
+        height: auto;
+        position: relative; /* Đặt sidebar theo flow của tài liệu trên màn hình nhỏ */
+    }
+
+    .main-content {
+        margin-left: 0; /* Nội dung chính không bị đẩy sang phải trên màn hình nhỏ */
+    }
+}
+
+body {
+    max-width: 1600px;
+    max-height: 900px;
+    background-image: url('bgr.jpg');
+    background-size: cover;
+    font-family: 'Roboto';
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Giãn cách đều 2 khối */
+    align-items: center; /* Căn chỉnh chiều cao của các khối đều nhau */
+    padding: 10px 20px; /* Khoảng cách xung quanh */
+    background-color: darkblue; /* Màu nền cho header để làm nổi khối */
+    border-radius: 8px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.infomation_board {
+    width: 100%;
+    text-align: center;
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperature-display {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the section */
+    color: #333; /* Color for the text */
+    background-color: white; /* Background for the temperature display */
+    padding: 15px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin-left: 20px; /* Space between the table and the temperature display */
+}
+
+.temperature-display h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2rem; /* Font size for the heading */
+}
+
+.temperature-display h2 {
+    margin: 5px 0 0; /* Margin for the temperature value */
+    font-size: 2rem; /* Font size for temperature */
+}
+
+/* Optional: Add media queries for responsive design */
+@media (max-width: 768px) {
+    .infomation_board {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center align the items */
+    }
+    .temperature-display {
+        width: 100%; /* Full width on small screens */
+        margin-top: 15px; /* Margin on top */
+    }
+}
+
+.table {
+    margin: 0 auto; /* Center the table */
+    width: 60%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better readability */
+    border-radius: 8px; /* Smooth corners */
+}
+
+.table th,
+.table td {
+    text-align: center; /* Center text inside table */
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+.thead-dark {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Chỗ đỗ còn trống */
+.seat_available {
+    width: 250px; /* Giữ nguyên chiều rộng như trước */
+    height: 130px; /* Giữ nguyên chiều cao như trước */
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 20px; /* Thêm khoảng cách bên cạnh */
+}
+
+.seat_available h3 {
+    font-size: 1.2rem; /* Điều chỉnh kích thước tiêu đề */
+    margin: 5px 0; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.seat_available h2 {
+    font-size: 2.5rem; /* Kích thước lớn để số chỗ còn trống nổi bật */
+    margin: 0; /* Loại bỏ khoảng cách mặc định */
+}
+
+.seat_available i {
+    font-size: 2rem; /* Điều chỉnh kích thước icon để cân đối với nội dung */
+    margin-bottom: 10px; /* Thêm khoảng cách giữa icon và tiêu đề */
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .seat_available {
+        width: 200px; /* Giảm chiều rộng trên màn hình nhỏ */
+        height: 110px; /* Giảm chiều cao trên màn hình nhỏ */
+    }
+
+    .seat_available h2 {
+        font-size: 2rem; /* Giảm kích thước chữ trên màn hình nhỏ */
+    }
+
+    .seat_available h3 {
+        font-size: 1rem; /* Điều chỉnh kích thước tiêu đề trên màn hình nhỏ */
+    }
+}
+
+.time {
+    font-size: 1.2rem;
+    justify-content: center;
+    color: rgb(23, 23, 22);
+    text-align: center;
+}
+
+.chart-container {
+    width: 70%;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #060000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.button-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.button {
+    padding: 15px;
+    margin: 10px;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light-button {
+    background-color: yellow;
+    color: black;
+}
+
+.sos-button {
+    background-color: red;
+}
+
+.large-icon {
+    font-size: 120px;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column; /* Xếp các khu theo chiều dọc */
+    align-items: flex-start; /* Căn trái */
+    margin: 20px 0; /* Thêm khoảng cách giữa hàng này và phần trên */
+}
+
+.btn-group {
+    display: flex; /* Hiển thị các dropdown thành hàng ngang */
+    flex-direction: row; /* Đảm bảo dropend theo chiều ngang */
+    margin-bottom: 20px; /* Khoảng cách giữa các khu */
+}
+
+.btn-group .dropdown-menu {
+    position: static; /* Đảm bảo dropdown nằm cạnh nhau theo chiều ngang */
+    display: inline-block;
+}
+
+.dropend .dropdown-toggle::after {
+    vertical-align: middle;
+}
+
+footer {
+    background-color: #333; /* Nền tối cho footer */
+    color: #fff; /* Chữ trắng */
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Căn đều các phần trong footer */
+    flex-wrap: wrap; /* Đảm bảo các phần sẽ xuống dòng nếu không đủ không gian */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0; /* Khoảng cách giữa phần trên của footer và các mục */
+}
+
+.footer-section {
+    flex-basis: 45%; /* Mỗi phần chiếm 45% chiều rộng màn hình lớn */
+    padding: 20px;
+    margin-bottom: 20px; /* Khoảng cách giữa các phần khi xuống dòng */
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Màu vàng nổi bật cho tiêu đề các phần */
+}
+
+.footer-section ul {
+    list-style-type: none; /* Loại bỏ bullet của danh sách */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6b6b; /* Đổi màu khi hover */
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #ff6b6b; /* Đổi màu khi hover */
+}
+
+.footer-bottom {
+    background-color: #222; /* Nền tối hơn cho phần cuối */
+    padding: 10px 0px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Đặt các phần theo chiều dọc trên màn hình nhỏ */
+        align-items: center; /* Căn giữa các phần */
+    }
+
+    .footer-section {
+        flex-basis: 100%; /* Mỗi phần chiếm toàn bộ chiều rộng màn hình nhỏ */
+        text-align: center; /* Căn giữa các mục */
+    }
+}
